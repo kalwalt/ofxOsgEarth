@@ -1,13 +1,9 @@
 #include "testApp.h"
 
-#include <osg/Geode>
-#include <osg/ShapeDrawable>
-#include <osg/Shape>
 #include <osgDB/ReadFile>
-//#include <osgDB/Util>
 #include <osgViewer/View>
 #include <osgGA/TrackballManipulator>
-//#include <osgEarthAnnotation/ModelNode>
+
 
 
 //--------------------------------------------------------------
@@ -16,12 +12,6 @@ void testApp::setup(){
 
     osg::Node* myModel = osgDB::readNodeFile("data/gdal_tiff.earth");
 
-   // osg::ShapeDrawable* drawable = new osg::ShapeDrawable(new osg::Box(osg::Vec3(0,0,0), 1.0f));
-   // osg::Geode* geode = new osg::Geode();
-    //geode->addDrawable(drawable);
-    //geode->addNode(myModel);
-
-    //getView()->setSceneData(geode);
     getView()->setSceneData(myModel);
     getView()->setCameraManipulator(new osgGA::TrackballManipulator());
 
@@ -35,10 +25,10 @@ void testApp::update(){
 //--------------------------------------------------------------
 void testApp::draw(){
      // std::cout << "draw" << std::endl;
-    ofDrawBitmapString("ofxosgEarth Demo", 10, 10);
+    ofDrawBitmapString("ofxOsgEarth Demo", 10, 10);
     ofDrawBitmapString("fps: "+ofToString((ofGetFrameRate())), 10, 25);
 
-   // ofDrawBitmapString("'1': set window position\n'2': set window size\n'f': disable full screen \n'F': enable full screen\n's': show osg's stats-handler", 10,50);
+
 }
 
 //--------------------------------------------------------------
